@@ -5,7 +5,10 @@
 sudo apt update -y
 sudo apt install nginx -y
 
-# Code to add header to display hostname
+# Remove existing custom header entries
+sudo sed -i '/add_header X-Served-By/d' /etc/nginx/sites-enabled/default
+
+# Add the custom header
 string_for_replacement="server_name _;\n\tadd_header X-Served-By \$hostname;"
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
