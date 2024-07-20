@@ -10,11 +10,11 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend oreste-frontend
+frontend kerie-frontend
         bind *:80
         mode http
-        default_backend oreste-backend
-backend oreste-backend
+        default_backend kerie-backend
+backend kerie-backend
         balance roundrobin
         server 6238-web-01 54.90.149.171:80 check
         server 6238-web-02 54.90.234.10:80 check
