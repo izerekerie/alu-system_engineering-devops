@@ -1,1 +1,1 @@
-run as root user
+# run as root user
